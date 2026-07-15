@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cita con Carlos Castro</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#f7ead7,#f9dfe1);color:#4c3029;font-family:Georgia,'Times New Roman',serif;padding:20px}.caja{width:min(620px,100%);text-align:center;padding:34px 24px;background:#f7ead7cc;border-radius:24px;box-shadow:0 12px 35px #6d1d3230}.corazon{color:#b6354b;font-size:32px}h1{margin:8px 0 14px;color:#6d1d32;font-size:clamp(2rem,8vw,3.3rem);font-weight:500}p{font-size:1.15rem;line-height:1.55;margin:0 auto 24px;max-width:520px}.paso{display:none}.paso.activo{display:block;animation:entra .35s ease}.botones{display:grid;gap:12px;max-width:430px;margin:auto}button{font:inherit;font-size:1.05rem;padding:13px 18px;border:2px solid #6d1d32;border-radius:999px;background:transparent;color:#6d1d32;cursor:pointer;transition:.15s}button:hover,button:focus-visible{transform:translateY(-2px);background:#efb4bf}.principal,.planes button{background:#6d1d32;color:#f7ead7}.principal:hover,.principal:focus-visible,.planes button:hover,.planes button:focus-visible{background:#b6354b}.planes{display:grid;gap:12px;max-width:440px;margin:auto}.fecha{display:grid;gap:14px;max-width:390px;margin:auto;text-align:left;color:#6d1d32}input,select{width:100%;margin-top:6px;padding:11px;border:1px solid #6d1d32;border-radius:10px;background:#fff8ec;color:#4c3029;font:inherit}.final{font-size:1.35rem;color:#6d1d32}.chico{font-size:.95rem;opacity:.75;margin-top:-10px}@keyframes entra{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+</style>
+</head><body><main class="caja"><div class="corazon">♥</div><h1>Cita con Carlos Castro</h1>
+
+<section class="paso activo" id="inicio"><p>Felicidades, eres la única mujer con la que Carlos quiere pasar su tiempo. ¿Te gustaría salir con él?</p><div class="botones"><button class="principal" onclick="ir('fecha')">Sí</button><button onclick="ir('no')">No</button></div></section>
+
+<section class="paso" id="no"><p>Ay no, espera... creo que se cortó el internet justo cuando ibas a decir "sí".<br>Mi corazón no está preparado para procesar esa respuesta, así que técnicamente no cuenta. ¿Lo intentamos otra vez?</p><div class="botones"><button class="principal" onclick="ir('fecha')">Sí, obvio ♥</button><button onclick="ir('no2')">Sigo diciendo que no</button></div></section>
+
+<section class="paso" id="no2"><p>Igual voy a estar esperándote con flores, sushi y una gata de rehén hasta que cambies de opinión.</p><div class="botones"><button class="principal" onclick="ir('fecha')">Está bien, sí quiero ♥</button></div></section>
+
+<section class="paso" id="fecha"><p>Perfecto ♥ ¿Qué día y a qué hora te recojo?</p><div class="fecha"><label>Fecha<input type="date" id="campo-fecha"></label><label>Momento<select id="campo-momento" onchange="document.getElementById('bloque-hora').style.display='block'"><option value="" selected disabled>Elige una opción</option><option>Temprano</option><option>Tarde</option></select></label><label id="bloque-hora" style="display:none">Hora exacta<input type="time" id="campo-hora"></label><button class="principal" onclick="confirmarFecha()">Confirmar cita</button></div></section>
+
+<section class="paso" id="plan"><p>Ya casi, ya casi... ¿a dónde vamos a hacer de las nuestras?</p><div class="planes"><button onclick="confirmarPlan('final-gata','A mi casa y que me robe la gata')">A mi casa y que me robe la gata</button><button onclick="confirmarPlan('final-sushi','A comer sushi')">A comer sushi y fingir que sabemos usar palillos</button><button onclick="confirmarPlan('final-series','A su casa a maratonear series')">A su casa a maratonear series y quedarme "solo un ratito"</button><button onclick="ir('otro')">Otra cosa</button></div></section>
+
+<section class="paso" id="otro"><p>Cuéntame, ¿qué se te ocurre?</p><div class="fecha"><label>Tu idea<input type="text" id="campo-otro" placeholder="Escribe aquí..."></label><button class="principal" onclick="confirmarOtro()">Confirmar cita</button></div></section>
+
+<section class="paso" id="final-gata"><p class="final">Ponte linda, que él te esperará con muchas ganas de verte.<br>Hasta luego ♥</p><p class="chico">(la gata ya sabe que se va contigo, no hay marcha atrás)</p><p class="chico">Ah, y prepárate porque va a llegar con un ramo de flores y un osito de peluche escondido detrás de la espalda.</p></section>
+
+<section class="paso" id="final-sushi"><p class="final">Ponte linda, que él te esperará con muchas ganas de verte.<br>Hasta luego ♥</p><p class="chico">Ah, y prepárate porque va a llegar con un ramo de flores y un osito de peluche escondido detrás de la espalda.</p></section>
+
+<section class="paso" id="final-series"><p class="final">Ponte linda, que él te esperará con muchas ganas de verte.<br>Hasta luego ♥</p><p class="chico">Ah, y prepárate porque va a llegar con un ramo de flores y un osito de peluche escondido detrás de la espalda.</p></section>
+
+<section class="paso" id="final-otro"><p class="final">Ponte linda, que él te esperará con muchas ganas de verte.<br>Hasta luego ♥</p><p class="chico">Ah, y prepárate porque va a llegar con un ramo de flores y un osito de peluche escondido detrás de la espalda.</p></section>
+
+</main>
+<script>
+function ir(id){document.querySelectorAll('.paso').forEach(x=>x.classList.toggle('activo',x.id===id))}
+
+const TEMA_NTFY = "cita-carlos-castro-0bzaafbrhqsc"; // nombre unico, no lo compartas
+
+let fechaElegida = "";
+let momentoElegido = "";
+let horaElegida = "";
+
+function confirmarFecha(){
+  fechaElegida = document.getElementById('campo-fecha').value || "(sin fecha)";
+  momentoElegido = document.getElementById('campo-momento').value || "(sin elegir)";
+  horaElegida = document.getElementById('campo-hora').value || "(sin hora)";
+  ir('plan');
+}
+
+function confirmarPlan(idFinal, nombrePlan){
+  fetch("https://ntfy.sh/" + TEMA_NTFY, {
+    method: "POST",
+    body: "Dijo que si! Fecha: " + fechaElegida + " - " + momentoElegido + " " + horaElegida + " | Plan: " + nombrePlan
+  }).catch(()=>{});
+  ir(idFinal);
+}
+
+function confirmarOtro(){
+  const idea = document.getElementById('campo-otro').value || "(no escribió nada)";
+  confirmarPlan('final-otro', idea);
+}
+</script>
+</body></html>
