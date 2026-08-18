@@ -14,19 +14,19 @@
 
 <section class="paso" id="no3"><p>Espera, mi internet se cortó justo cuando ibas a decir que sí. ¿Lo intentamos otra vez?</p><div class="botones"><button class="principal" onclick="ir('fecha')">Sí, obvio ♥</button><button onclick="ir('inicio')">No</button></div><button class="volver" onclick="volver()">‹ Volver</button></section>
 
-<section class="paso" id="fecha"><p>Perfecto ♥ ¿Qué día y a qué hora te recojo?</p><div class="fecha"><label>Fecha<input type="date" id="campo-fecha"></label><label>Momento<select id="campo-momento" onchange="document.getElementById('bloque-hora').style.display='block'"><option value="" selected disabled>Elige una opción</option><option>Temprano</option><option>Tarde</option></select></label><label id="bloque-hora" style="display:none">Hora exacta<input type="time" id="campo-hora"></label><button class="principal" onclick="confirmarFecha()">Confirmar cita</button></div><button class="volver" onclick="volver()">‹ Volver</button></section>
+<section class="paso" id="fecha"><p>Perfecto ¿Qué día y a qué hora nos juntamos?</p><div class="fecha"><label>Fecha<input type="date" id="campo-fecha"></label><label>Momento<select id="campo-momento" onchange="document.getElementById('bloque-hora').style.display='block'"><option value="" selected disabled>Elige una opción</option><option>Temprano</option><option>Tarde</option></select></label><label id="bloque-hora" style="display:none">Hora exacta<input type="time" id="campo-hora"></label><button class="principal" onclick="confirmarFecha()">Confirmar cita</button></div><button class="volver" onclick="volver()">‹ Volver</button></section>
 
 <section class="paso" id="plan"><p>Ya casi… ahora viene la parte importante: ¿dónde nos vamos a perder juntos?</p><div class="planes"><button onclick="confirmarPlan('final-casa','Ir a tomar un café')">Ir a tomar un café y conversar hasta que se nos olvide la hora</button><button onclick="confirmarPlan('final-sushi','Ir a comer algo rico')">Ir a comer algo rico (sin keso) y descubrir nuestro nuevo lugar favorito</button><button onclick="confirmarPlan('final-series','Dar una vuelta')">Dar una vuelta juntos y ver kfay</button><button onclick="ir('otro')">Otra cosa</button></div><button class="volver" onclick="volver()">‹ Volver</button></section>
 
 <section class="paso" id="otro"><p>Cuéntame, ¿qué se te ocurre?</p><div class="fecha"><label>Tu idea<input type="text" id="campo-otro" placeholder="Escribe aquí..."></label><button class="principal" onclick="confirmarOtro()">Confirmar cita</button></div><button class="volver" onclick="volver()">‹ Volver</button></section>
 
-<section class="paso" id="final-casa"><p class="final">♥<br>Cita con Carlos Danilo<br>Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos pronto, Mariana ♥</p></section>
+<section class="paso" id="final-casa"><p class="final">Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos marianita</p></section>
 
-<section class="paso" id="final-sushi"><p class="final">♥<br>Cita con Carlos Danilo<br>Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos pronto, Mariana ♥</p></section>
+<section class="paso" id="final-sushi"><p class="final">Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos marianita</p></section>
 
-<section class="paso" id="final-series"><p class="final">♥<br>Cita con Carlos Danilo<br>Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos pronto, Mariana ♥</p></section>
+<section class="paso" id="final-series"><p class="final">Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos marianita</p></section>
 
-<section class="paso" id="final-otro"><p class="final">♥<br>Cita con Carlos Danilo<br>Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos pronto, Mariana ♥</p></section>
+<section class="paso" id="final-otro"><p class="final">Trato hecho.<br>Ponte linda y prepárate para pasar un momento bonito juntos.<br>Lo demás… prefiero que sea sorpresa.<br>Nos vemos marianita</p></section>
 
 </main>
 <script>
